@@ -622,7 +622,7 @@ void Solver::Solve(const Solver::Options& options,
   // instead of USER_FAILURE and provide the error log.
   if (gradient_checking_callback.gradient_error_detected()) {
     summary->termination_type = FAILURE;
-    summary->message = gradient_checking_callback.error_log();
+    summary->message += gradient_checking_callback.error_log();
   }
 
   summary->total_time_in_seconds = WallTimeInSeconds() - start_time;
