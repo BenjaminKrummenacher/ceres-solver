@@ -142,7 +142,7 @@ CallbackReturnType GradientCheckingIterationCallback::operator()(
     const IterationSummary& summary) {
   if (gradient_error_detected_) {
     LOG(ERROR)<< "Gradient error detected. Not Terminating solver.";
-    LOG(INFO) << summary.message()
+    LOG(INFO) << summary.message() << std::endl;
     //return SOLVER_ABORT;
   }
   return SOLVER_CONTINUE;
