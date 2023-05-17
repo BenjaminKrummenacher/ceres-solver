@@ -160,7 +160,7 @@ bool GradientChecker::Probe(double const* const * parameters,
     results->numeric_jacobians.clear();
     results->local_jacobians.clear();
     results->local_numeric_jacobians.clear();
-    //results->error_log.clear();
+    results->error_log.clear();
   } else {
     results = &results_local;
   }
@@ -268,6 +268,7 @@ bool GradientChecker::Probe(double const* const * parameters,
         num_bad_jacobian_components,
         worst_relative_error);
      results->error_log = header + "\n" + error_log;
+     LOG(ERROR) << header + "\n" + error_log;
     return false;
   }
   return true;
