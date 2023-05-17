@@ -160,7 +160,7 @@ bool GradientChecker::Probe(double const* const * parameters,
     results->numeric_jacobians.clear();
     results->local_jacobians.clear();
     results->local_numeric_jacobians.clear();
-    results->error_log.clear();
+    //results->error_log.clear();
   } else {
     results = &results_local;
   }
